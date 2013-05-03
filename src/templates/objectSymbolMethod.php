@@ -14,6 +14,7 @@ public function <?php echo $methodName ?>(PropelPDO $con = null)
         $this-><?php echo $onHookMethodName ?>($con);
 
         $this-><?php echo $stateColumnSetter ?>(static::<?php echo $stateConstant ?>);
+        $this->state_machine_post_hook = '<?php echo $postHookMethodName; ?>';
     }
 
     return $this;

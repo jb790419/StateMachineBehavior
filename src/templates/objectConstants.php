@@ -13,4 +13,9 @@ const STATE_<?php echo strtoupper($state) ?> = <?php echo $i ?>;
  */
 const STATE_NORMALIZED_<?php echo strtoupper($state) ?> = "<?php echo $state ?>";
 
-<?php endforeach;
+<?php endforeach; ?>
+/**
+ * @var string
+ */
+protected $state_machine_post_hook;
+

@@ -1,10 +1,4 @@
-if ($isStateColumnModified)
+if (is_callable(array($this, $this->state_machine_post_hook)))
 {
-    switch ($this-><?php echo $stateColumnGetter ?>()) {
-<?php foreach ($states as $stateConstant => $postHookMethodName) : ?>
-        case static::<?php echo $stateConstant ?>:
-            $this-><?php echo $postHookMethodName ?>($con);
-            break;
-<?php endforeach; ?>
-    }
+    call_user_func(array($this, $this->state_machine_post_hook), $con);
 }
